@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import Hero from "../components/Hero";
+// import Banner from "../components/Banner";
+import Banner from '../components/Banner'
+import { NavLink } from "react-router-dom";
+import RoomsContainer from "../components/RoomsContainer";
 
-const Room = () => {
+const Rooms = () => {
   return (
-    <div>Hello From Room</div>
-  )
-}
+    <>
+      <Hero hero="roomsHero">
+        <Banner title="our rooms">
+          <NavLink to="/" className="btn-primary">
+            return home
+          </NavLink>
+        </Banner>
+      </Hero>
+      <RoomsContainer />
+    </>
+  );
+};
 
-export default Room
+export default Rooms;

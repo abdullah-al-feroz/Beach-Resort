@@ -14,12 +14,10 @@ function App() {
     <Navbar/>
     <Routes>
     <Route path="/" element={<Home />} />
-        <Route path="/rooms/" element={<Login />} />
-        <Route path="/rooms/:slug" element={<SingleRoom />} />
-        <Route path="/*" element={<PrivateOutlet />}>
-          <Route path="dashboard" element={<Dashboard title="Dashboard" />} />
-        </Route>
-      <Route element={<Error/>}/>
+        <Route path="/rooms/" element={<Room />} />
+        {/* <Route path="/rooms/:slug" element={<SingleRoom />} /> */}
+        <Route path="/rooms/:slug" element={SingleRoom} />
+        <Route element={<Error/>}/>
       <Route/>
     </Routes>
     </>
