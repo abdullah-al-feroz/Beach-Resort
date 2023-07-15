@@ -17,6 +17,7 @@ export default class SingleRoom extends Component {
   static contextType = RoomContext;
 
   render() {
+    debugger
     const { getRoom } = this.context;
     const room = getRoom(this.state.slug);
 
@@ -30,7 +31,7 @@ export default class SingleRoom extends Component {
         </div>
       );
     }
-
+debugger
     const {
       name,
       description,
