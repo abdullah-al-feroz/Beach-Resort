@@ -4,7 +4,6 @@ import items from "./data";
 const RoomContext = React.createContext();
 
 export default class RoomProvider extends Component {
-  debugger
   state = {
     rooms: [],
     sortedRooms: [],
@@ -23,8 +22,6 @@ export default class RoomProvider extends Component {
   };
 
   componentDidMount() {
-    // this.getData();
-    debugger
     let rooms = this.formatData(items);
     let featuredRooms = rooms.filter(room => room.featured === true);
     //
@@ -58,7 +55,6 @@ export default class RoomProvider extends Component {
     return room;
   };
   handleChange = event => {
-    debugger
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
