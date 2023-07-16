@@ -10,18 +10,23 @@ export default class SingleRoom extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      slug: this.props.match.params.slug,
+      slug: this.props.match?.params?.slug,
       defaultBcg: defaultBcg
     };
   }
   static contextType = RoomContext;
 
+    componentDidMount() {
+    console.log("Props", this.props);
+  }
   render() {
     debugger
     const { getRoom } = this.context;
-    const room = getRoom(this.state.slug);
+    debugger
+    const room = getRoom(this.state?.slug);
 
     if (!room) {
+      debugger
       return (
         <div className="error">
           <h3> no such room could be found...</h3>
@@ -47,7 +52,7 @@ debugger
 
     return (
       <>
-        <StyledHero img={images[0] || this.state.defaultBcg}>
+        <StyledHero img={images[0] || this.state?.defaultBcg}>
           <Banner title={`${name} room`}>
             <NavLink to="/rooms" className="btn-primary">
               back to rooms
@@ -57,7 +62,7 @@ debugger
 
         <section className="single-room">
           <div className="single-room-images">
-            {defaultImages.map((item, index) => (
+            {defaultImages?.map((item, index) => (
               <img key={index} src={item} alt={name} />
             ))}
           </div>
@@ -82,7 +87,7 @@ debugger
         <section className="room-extras">
           <h6>extras </h6>
           <ul className="extras">
-            {extras.map((item, index) => (
+            {extras?.map((item, index) => (
               <li key={index}>- {item}</li>
             ))}
           </ul>
