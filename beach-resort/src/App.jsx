@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 
 import Home from './pages/Home';
@@ -16,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/rooms/" element={<Room />} />
         <Route path="/rooms/:slug" element={<SingleRoom />} /> 
-        <Route element={<Error/>}/>
+        <Route path="*" element={<Error/>}/>
       <Route/>
     </Routes>
     </>
