@@ -16,17 +16,13 @@ export default class SingleRoom extends Component {
   }
   static contextType = RoomContext;
 
-    componentDidMount() {
-    console.log("Props", this.props);
-  }
   render() {
-    debugger
+    const roomName = window.location.pathname.split("/")[2];
+
     const { getRoom } = this.context;
-    debugger
-    const room = getRoom(this.state?.slug);
+    const room = getRoom(roomName);
 
     if (!room) {
-      debugger
       return (
         <div className="error">
           <h3> no such room could be found...</h3>
@@ -36,7 +32,7 @@ export default class SingleRoom extends Component {
         </div>
       );
     }
-debugger
+    
     const {
       name,
       description,
